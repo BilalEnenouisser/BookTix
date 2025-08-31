@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookTix - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <a href="#">
+                    <img src="assets/logo/logo.svg" alt="BookTix Logo">
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Why BookTix
+                            <svg class="dropdown-icon" width="8" height="6" viewBox="0 0 8 6" fill="none">
+                                <path d="M1 1L4 4L7 1" stroke="#0065CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Feature 1</a></li>
+                            <li><a href="#" class="dropdown-item">Feature 2</a></li>
+                            <li><a href="#" class="dropdown-item">Feature 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Customers
+                            <svg class="dropdown-icon" width="8" height="6" viewBox="0 0 8 6" fill="none">
+                                <path d="M1 1L4 4L7 1" stroke="#0065CC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Customer Stories</a></li>
+                            <li><a href="#" class="dropdown-item">Testimonials</a></li>
+                            <li><a href="#" class="dropdown-item">Case Studies</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Resources</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Action Buttons -->
+                <div class="nav-actions-mobile">
+                    <button class="btn btn-help" id="getHelpBtnMobile">
+                        <img src="assets/nav/mic.svg" alt="Help Icon" class="btn-icon">
+                        Get Help
+                    </button>
+                    <button class="btn btn-connect">
+                        Let's Connect
+                        <img src="assets/nav/arrow.svg" alt="Arrow" class="btn-icon">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop Action Buttons -->
+            <div class="nav-actions">
+                <button class="btn btn-help" id="getHelpBtn">
+                    <img src="assets/nav/mic.svg" alt="Help Icon" class="btn-icon">
+                    Get Help
+                </button>
+                <button class="btn btn-connect">
+                    Let's Connect
+                    <img src="assets/nav/arrow.svg" alt="Arrow" class="btn-icon">
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="nav-toggle" id="navToggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Get Help Popup -->
+    <div class="help-popup" id="helpPopup">
+        <div class="help-popup-content">
+            <button class="help-popup-close" id="helpPopupClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h3>Get Help</h3>
+            <p>How can we assist you today?</p>
+            <div class="help-options">
+                <button class="help-option">Live Chat</button>
+                <button class="help-option">Email Support</button>
+                <button class="help-option">Phone Support</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-image">
+                <!-- Background image/video will be added here -->
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-left-gradient"></div>
+            <div class="hero-bottom-gradient"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-title-line1">
+                        Easy Online
+                        <img src="assets/hero/line.svg" alt="Decorative line" class="hero-title-underline">
+                    </span>
+                    <span class="hero-title-line2">Ticketing With</span>
+                    <span class="hero-title-line3">Real Support</span>
+                </h1>
+                
+                <p class="hero-description">
+                    You care deeply about your event and so do we. BookTix gives you real tools and real support, built by people who've stood where you stand.
+                </p>
+                
+                <div class="hero-buttons">
+                    <button class="hero-btn hero-btn-primary">Book A Demo</button>
+                    <button class="hero-btn hero-btn-secondary">How It Works</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve Section -->
+    <section class="who-we-serve">
+        <!-- Top Section with Title -->
+        <div class="who-we-serve-header">
+            <div class="header-content">
+                <h2 class="section-subtitle">WHO WE SERVE</h2>
+                <h3 class="section-title">We Support the People Who Make Events Happen</h3>
+                <p class="section-description">We work with thousands of programs across the country, from your local drama club to your district's full fine arts department.</p>
+            </div>
+        </div>
+
+        <!-- Desktop Swiper Carousel -->
+        <div class="who-we-serve-swiper desktop-only">
+            <!-- Navigation Arrows (Fixed in Center) -->
+            <div class="swiper-button-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="#0065CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="swiper-button-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18L15 12L9 6" stroke="#0065CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-category="school-theatre">
+                        <div class="card-bg" style="background-image: url('assets/slider1/1.png');"></div>
+                        <div class="card-inner">
+                            <h4 class="card-title">School Theatre</h4>
+                            <div class="card-content">
+                                <h4 class="card-title-content">School Theatre</h4>
+                                <p class="card-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                                <button class="card-btn">Explore More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" data-category="dance-studios">
+                        <div class="card-bg" style="background-image: url('assets/slider1/2.png');"></div>
+                        <div class="card-inner">
+                            <h4 class="card-title">Dance Studios</h4>
+                            <div class="card-content">
+                                <h4 class="card-title-content">Dance Studios</h4>
+                                <p class="card-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                                <button class="card-btn">Explore More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" data-category="community-theatre">
+                        <div class="card-bg" style="background-image: url('assets/slider1/3.png');"></div>
+                        <div class="card-inner">
+                            <h4 class="card-title">Community Theatre</h4>
+                            <div class="card-content">
+                                <h4 class="card-title-content">Community Theatre</h4>
+                                <p class="card-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                                <button class="card-btn">Explore More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" data-category="school-sports">
+                        <div class="card-bg" style="background-image: url('assets/slider1/4.png');"></div>
+                        <div class="card-inner">
+                            <h4 class="card-title">School Sports & Athletics</h4>
+                            <div class="card-content">
+                                <h4 class="card-title-content">School Sports & Athletics</h4>
+                                <p class="card-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                                <button class="card-btn">Explore More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" data-category="and-more">
+                        <div class="card-bg" style="background-image: url('assets/slider1/5.png');"></div>
+                        <div class="card-inner">
+                            <h4 class="card-title">And More</h4>
+                            <div class="card-content">
+                                <h4 class="card-title-content">And More</h4>
+                                <p class="card-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                                <button class="card-btn">Explore More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Accordion -->
+        <div class="who-we-serve-accordion mobile-only">
+            <div class="accordion-container">
+                <div class="accordion-item active" data-category="school-theatre">
+                    <div class="accordion-header">
+                        <h4 class="accordion-title">School Theatre</h4>
+                        <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="#0D2346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                        <button class="accordion-btn">Explore More</button>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-category="dance-studios">
+                    <div class="accordion-header">
+                        <h4 class="accordion-title">Dance Studios</h4>
+                        <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="#0D2346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                        <button class="accordion-btn">Explore More</button>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-category="community-theatre">
+                    <div class="accordion-header">
+                        <h4 class="accordion-title">Community Theatre</h4>
+                        <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="#0D2346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                        <button class="accordion-btn">Explore More</button>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-category="school-sports">
+                    <div class="accordion-header">
+                        <h4 class="accordion-title">School Sports & Athletics</h4>
+                        <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="#0D2346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                        <button class="accordion-btn">Explore More</button>
+                    </div>
+                </div>
+                
+                <div class="accordion-item" data-category="and-more">
+                    <div class="accordion-header">
+                        <h4 class="accordion-title">And More</h4>
+                        <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="#0D2346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-description">Avoid recital-day chaos with flexible seat assignments, VIP pricing, and real-time support when you need it most.</p>
+                        <button class="accordion-btn">Explore More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BookTix Features Section -->
+    <section class="booktix-features">
+        <div class="features-container">
+            <div class="features-content">
+                <div class="features-header">
+                    <h6 class="features-subtitle">BOOKTIX FEATURES</h6>
+                    <h2 class="features-title">Your Journey to Seamless Ticketing Starts Here</h2>
+                    <p class="features-description">No coding. No setup fees. No confusion. Just a few steps away from "uh-oh" to "sold out."</p>
+                </div>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <rect x="7.5" y="7.5" width="21" height="16.5" rx="0" stroke="url(#laptop-gradient)" stroke-width="2"/>
+                                <rect x="4.5" y="24" width="27" height="4.5" rx="0" stroke="url(#laptop-gradient)" stroke-width="2"/>
+                                <defs>
+                                    <linearGradient id="laptop-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#30A1FF"/>
+                                        <stop offset="27.21%" style="stop-color:#0065CC"/>
+                                        <stop offset="100%" style="stop-color:#5D00F3"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="feature-text">Fast, flexible ticket sales online and in person</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <circle cx="18" cy="18" r="13.5" stroke="url(#clock-gradient)" stroke-width="2"/>
+                                <path d="M18 9.75L18 18L24.75 24.75" stroke="url(#clock-gradient)" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="clock-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#30A1FF"/>
+                                        <stop offset="27.21%" style="stop-color:#0065CC"/>
+                                        <stop offset="100%" style="stop-color:#5D00F3"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="feature-text">Real-time reporting that's easy to understand</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <path d="M7.5 4.5H28.5V30H7.5V4.5Z" stroke="url(#headset-gradient)" stroke-width="2"/>
+                                <defs>
+                                    <linearGradient id="headset-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#30A1FF"/>
+                                        <stop offset="27.21%" style="stop-color:#0065CC"/>
+                                        <stop offset="100%" style="stop-color:#5D00F3"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="feature-text">Support from real people</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <rect x="6" y="6" width="22.5" height="24" rx="2" stroke="url(#wallet-gradient)" stroke-width="2"/>
+                                <rect x="19.5" y="12" width="12" height="12" rx="1" stroke="url(#wallet-gradient)" stroke-width="2"/>
+                                <circle cx="25.5" cy="18" r="2.25" fill="url(#wallet-gradient)"/>
+                                <defs>
+                                    <linearGradient id="wallet-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#30A1FF"/>
+                                        <stop offset="27.21%" style="stop-color:#0065CC"/>
+                                        <stop offset="100%" style="stop-color:#5D00F3"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="feature-text">Reliable payouts with no waiting and no red tape</p>
+                    </div>
+                </div>
+                
+                <button class="features-btn">Book A Demo</button>
+            </div>
+            
+            <div class="features-illustration">
+                <div class="illustration-placeholder">
+                    <span>ILLUSTRATION</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="head">
+            <h2>We're More than Software. We're Your Partner Behind the Scenes.</h2>
+            <p class="head-description">We've been in your shoes. That's why we built a ticketing platform that actually helps.</p>
+            <div class="controls">
+                <button id="prev" class="nav-btn" aria-label="Prev">‹</button>
+                <button id="next" class="nav-btn" aria-label="Next">›</button>
+            </div>
+        </div>
+
+        <div class="slider">
+            <div class="track" id="track">
+                <article class="project-card" active>
+                    <img class="project-card__bg" src="assets/ExpandingCarousel/1.jpg" alt="Make Every Seat Count">
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">
+                            <span class="number">01</span>
+                            <span class="text">Make Every Seat Count</span>
+                        </h3>
+                        <p class="project-card__desc">From dance recitals to community productions, we simplify ticket sales with reserved seating, promotion tools, and live tracking for easy planning and upselling.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img class="project-card__bg" src="assets/ExpandingCarousel/2.jpg" alt="Turn Ticketing Into a Fundraising Engine">
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">
+                            <span class="number">02</span>
+                            <span class="text">Turn Ticketing Into a Fundraising Engine</span>
+                        </h3>
+                        <p class="project-card__desc">Transform your events into powerful fundraising opportunities with integrated donation features, sponsor packages, and automated follow-up campaigns.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img class="project-card__bg" src="assets/ExpandingCarousel/3.jpg" alt="Grow a Loyal Audience, Not Just a Crowd">
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">
+                            <span class="number">03</span>
+                            <span class="text">Grow a Loyal Audience, Not Just a Crowd</span>
+                        </h3>
+                        <p class="project-card__desc">Build lasting relationships with your audience through personalized communication, loyalty programs, and data-driven insights that help you understand your patrons.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img class="project-card__bg" src="assets/ExpandingCarousel/4.jpg" alt="All Your Event Data in One Place">
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">
+                            <span class="number">04</span>
+                            <span class="text">All Your Event Data in One Place</span>
+                        </h3>
+                        <p class="project-card__desc">Access comprehensive analytics, attendee insights, and performance metrics in real-time, giving you the data you need to make informed decisions.</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img class="project-card__bg" src="assets/ExpandingCarousel/5.jpg" alt="You Handle the Show and We'll Handle the Setup">
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">
+                            <span class="number">05</span>
+                            <span class="text">You Handle the Show and We'll Handle the Setup</span>
+                        </h3>
+                        <p class="project-card__desc">Focus on what you do best while we take care of the technical details, customer support, and platform maintenance behind the scenes.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="section-cta">
+            <button class="section-btn">Book A Demo</button>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="testimonial-content">
+                <h2 class="testimonial-header">THE BOOKTIX DIFFERENCE, IN THEIR WORDS</h2>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <span class="category">Dance Studio</span>
+                    </div>
+                    
+                    <div class="testimonial-quote">
+                        <p>Feature rich and <strong>easy to use</strong>. They are super responsive whenever I have a question or request and are always happy to help.</p>
+                    </div>
+                    
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="assets/testimonial/testimonial-avatar1.jpg" alt="Chris Satola">
+                        </div>
+                        <div class="author-info">
+                            <div class="author-name-title">
+                                <span class="author-name">Chris Satola</span>
+                                <span class="author-title">Events manager</span>
+                            </div>
+                            <div class="author-organization">Garfield Heights Center For The Performing Arts / OH</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-navigation">
+                    <div class="pagination">
+                        <span class="current-slide">01</span>
+                        <span class="total-slides">/ 10</span>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="nav-btn prev-btn" id="testimonial-prev">
+                            <svg width="16" height="21" viewBox="0 0 16 21" fill="none">
+                                <path d="M15 1L1 10.5L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="nav-btn next-btn" id="testimonial-next">
+                            <svg width="16" height="21" viewBox="0 0 16 21" fill="none">
+                                <path d="M1 1L15 10.5L1 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-image">
+                <div class="image-container">
+                    <img src="assets/testimonial/testimonial-hero.jpg" alt="Dance Performance">
+                    <div class="image-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <h1>Welcome to BookTix</h1>
+        <p>This is the main content area. The navbar is now complete with all features.</p>
+    </main>
+
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
