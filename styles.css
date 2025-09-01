@@ -349,15 +349,20 @@ body {
 /* Mobile Menu Toggle */
 .nav-toggle {
     display: none;
-    flex-direction: column;
     cursor: pointer;
-    gap: 4px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.hamburger {
-    width: 25px;
-    height: 3px;
-    background: #333;
+.nav-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
     transition: all 0.3s ease;
 }
 
@@ -1402,7 +1407,12 @@ body {
         align-items: stretch !important;
     }
     .newsletter-btn{
-        justify-content: flex-start;
+        justify-content: center;
+        
+    }
+    .benefits-label{
+        color: #0065CC !important;
+        font-weight: 600 !important;
     }
     .legal-links{
         justify-content: flex-start !important;
@@ -1587,6 +1597,9 @@ body {
     
     .nav-toggle {
         display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
     }
     
     /* Show mobile hero, hide desktop hero */
@@ -1667,16 +1680,9 @@ body {
         display: flex;
     }
     
-    .nav-toggle.active .hamburger:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .nav-toggle.active .hamburger:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .nav-toggle.active .hamburger:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+    .nav-toggle.active .hamburger-icon {
+        transform: rotate(90deg);
+        opacity: 0.7;
     }
     
     /* Enable dropdown functionality for "Why BookTix" on mobile */
@@ -2235,6 +2241,19 @@ body {
     max-width: 1400px;
     margin: auto;
     overflow: hidden;
+}
+
+/* Enable touch scrolling on mobile */
+@media (max-width: 767px) {
+    .slider {
+        overflow: visible;
+        touch-action: pan-y;
+    }
+    
+    .track {
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+    }
 }
 
 
@@ -3848,6 +3867,11 @@ body {
         --open: 100%;
         --gap: 0.8rem;
     }
+    
+    .benefits-section {
+        overflow: visible;
+        touch-action: pan-y;
+    }
 
     .head {
         padding: 0 15px 20px;
@@ -3865,6 +3889,9 @@ body {
         scroll-snap-type: y mandatory;
         gap: 0.8rem;
         padding-bottom: 20px;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: auto;
     }
 
     .project-card {

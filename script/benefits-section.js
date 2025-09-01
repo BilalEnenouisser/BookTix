@@ -86,13 +86,14 @@
         
         // Touch handler for mobile devices
         card.addEventListener("touchstart", (e) => {
-            e.preventDefault();
+            // Don't prevent default to allow scrolling
             activate(i, true);
-        }, { passive: false });
+        }, { passive: true });
     });
 
     let sx = 0,
         sy = 0;
+    // Touch handling for mobile - only handle horizontal swipes, allow vertical scrolling
     track.addEventListener(
         "touchstart",
         (e) => {
@@ -107,8 +108,19 @@
         (e) => {
             const dx = e.changedTouches[0].clientX - sx;
             const dy = e.changedTouches[0].clientY - sy;
-            if (isMobile() ? Math.abs(dy) > 60 : Math.abs(dx) > 60)
-                go((isMobile() ? dy : dx) > 0 ? -1 : 1);
+            
+            // Only handle horizontal swipes on mobile, allow vertical scrolling
+            if (isMobile()) {
+                // On mobile, only handle horizontal swipes if they're significant
+                if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy)) {
+                    go(dx > 0 ? -1 : 1);
+                }
+            } else {
+                // On desktop, handle both directions
+                if (Math.abs(dx) > 60) {
+                    go(dx > 0 ? -1 : 1);
+                }
+            }
         },
         { passive: true }
     );
