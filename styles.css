@@ -1319,14 +1319,17 @@ body {
         gap: 0px !important;
     }
     .project-card:not([active]) .project-card__content{
-        align-items: center !important;
+        
         border-bottom: 1px solid #E0E0E0 !important;
+        align-items: center !important;
     }
+    
     .project-card[active] .project-card__title .text{
         text-align: start !important;
     }
     .project-card:not([active]) .project-card__title{
         max-width: 100% !important;
+        padding-bottom: 25px !important;
     }
 
     .who-we-serve-header{
@@ -2244,6 +2247,7 @@ body {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     padding-bottom: 40px;
+    align-items: stretch;
 }
 
 .track::-webkit-scrollbar {
@@ -2258,6 +2262,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: flex-basis var(--speed), transform var(--speed);
+    min-width: var(--closed);
 }
 
 .project-card[active] {
@@ -2321,6 +2326,9 @@ body {
     justify-content: flex-end;
     align-items: flex-start;
     padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card__title {
@@ -2345,11 +2353,13 @@ body {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-    max-width: 80%;
+    width: 48px;
+    min-width: 48px;
     display: flex;
     align-items: center;
     flex-direction: row;
     opacity: 1;
+    justify-content: center;
 }
 
 .project-card__title .number {
@@ -2359,6 +2369,7 @@ body {
     display: block;
     margin-bottom: 0.2rem;
     margin-right: 3px;
+    flex-shrink: 0;
 }
 
 
@@ -2397,12 +2408,14 @@ body {
     color: #0D2346;
     font-weight: 600;
     line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
     padding-top: 8px;
     padding-right: 4px;
     font-size: 15px;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .project-card__thumb,
@@ -3226,7 +3239,7 @@ body {
     }
     
     .illustration-placeholder {
-        width: 350px;
+        width: 390px;
         height: 450px;
         
     }
@@ -3237,6 +3250,7 @@ body {
     .illustration-placeholder1 {
         width: 300px;
         height: 400px;
+        margin-left: 20px;
     }
     
     .marketing-heading {
@@ -3269,8 +3283,11 @@ body {
         order: 2;
         justify-content: center;
         padding-bottom: 30px;
+        width: 100%;
     }
-    
+    .contact-form{
+        width: 100%;
+    }
     .contact-illustration {
         order: 3;
     }
@@ -3792,17 +3809,23 @@ body {
         text-align: center;
         position: static;
         width: 100%;
+        min-width: 200px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         opacity: 1;
+        gap: 0.5rem;
     }
     
     .project-card:not([active]) .project-card__title .text {
         white-space: normal;
         overflow: visible;
         text-overflow: unset;
+        word-wrap: break-word;
+        hyphens: auto;
+        flex: 1;
+        min-width: 0;
     }
     
     .project-card__title .number {
