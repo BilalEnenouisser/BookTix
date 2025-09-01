@@ -1259,17 +1259,27 @@ body {
 
 @media (max-width: 480px) {
     .project-card__bg{
-        height: 290px !important;
-        top: 70px !important;
+        height: 330px !important;
+        
+        
     }
     .project-card[active]{
-        max-height: 520px !important;
+        max-height: 440px !important;
+        box-shadow: none !important;
     }
     .project-card[active] .project-card__content{
         justify-content: space-between !important;
+        padding: 10px 24px 24px 24px !important;
+        background: linear-gradient(to bottom, rgba(13, 35, 70, 0.8) 0%, rgba(13, 35, 70, 0.4) 15%, #0d234600 30%, #0d2346 58%, rgb(13 35 70) 85%, rgb(13 35 70) 100%) !important;
     }
+    
     .project-card[active] .project-card__title{
-        margin-top: 0 !important;
+        margin-top: 20px !important;
+    }
+    .project-card[active] .project-card__desc{
+        font-size: 18px !important;
+        line-height: 27px !important;
+        font-weight: 500 !important;
     }
     .slider{
         padding: 0 !important;
@@ -1277,9 +1287,38 @@ body {
     .project-card{
         border-radius: 0 !important;
     }
-    .project-card[active]{
-        box-shadow: none !important;
+    .project-card[active] .project-card__title .number{
+        font-size: 24px !important;
+        margin-right: 12px !important;
+        color: #62B0FF !important;
     }
+
+    .project-card[active] .project-card__title .text{
+        font-size: 24px !important;
+        font-weight: 500 !important;
+    }
+
+    .project-card:not([active]) .project-card__title .text, .project-card__title .number{
+        padding-top: 0px !important;
+        font-size: 18px !important;
+        text-align: start !important;
+    }
+    .project-card:not([active]) .project-card__title{
+        align-items: flex-start !important;
+    }
+    .project-card__title .number{
+        margin-right: 9px !important;
+    }
+    .section-btn{
+        width: 90% !important;
+    }
+    .track{
+        gap: 0px !important;
+    }
+    .project-card:not([active]) .project-card__content{
+        align-items: center !important;
+    }
+    
 
 }
 
@@ -2197,7 +2236,7 @@ body {
 }
 
 .project-card__title .number {
-    color: #62B0FF;
+    color: #0065CC;
     font-size: 1.2rem;
     font-weight: 700;
     display: block;
