@@ -26,9 +26,23 @@
             if (k === i) {
                 c.setAttribute("active", "");
                 c.style.transition = "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+                
+                // Reset animation for description
+                const desc = c.querySelector('.project-card__desc');
+                if (desc) {
+                    desc.style.animation = 'none';
+                    desc.offsetHeight; // Trigger reflow
+                    desc.style.animation = 'fadeInUp 0.6s ease-out 0.3s forwards';
+                }
             } else {
                 c.removeAttribute("active");
                 c.style.transition = "all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+                
+                // Reset animation for description
+                const desc = c.querySelector('.project-card__desc');
+                if (desc) {
+                    desc.style.animation = 'none';
+                }
             }
         });
         prev.disabled = i === 0;

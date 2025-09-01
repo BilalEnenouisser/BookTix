@@ -2273,12 +2273,19 @@ body {
     height: 100%;
     object-fit: cover;
     
-    transition: filter 0.3s, transform var(--speed);
+    transition: filter 0.3s, transform var(--speed), opacity var(--speed);
     opacity: 0;
+    transform: translateX(100%);
 }
 
 .project-card[active] .project-card__bg {
     opacity: 1;
+    transform: translateX(0);
+}
+
+.project-card:not([active]) .project-card__bg {
+    transform: translateX(-100%);
+    opacity: 0;
 }
 
 .project-card:hover .project-card__bg {
@@ -2322,12 +2329,15 @@ body {
     font-size: 0.9rem;
     text-align: right;
     line-height: 1.2;
+    transition: transform var(--speed), opacity var(--speed);
+    transform: translateY(-20px);
+    opacity: 0;
 }
 
 .project-card:not([active]) .project-card__title {
     color: #0D2346;
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    transform: rotate(180deg) translateY(20px);
     text-align: left;
     font-size: 0.8rem;
     font-weight: 600;
@@ -2339,6 +2349,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row;
+    opacity: 1;
 }
 
 .project-card__title .number {
@@ -2417,6 +2428,8 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .project-card[active] .project-card__title .number {
@@ -2438,8 +2451,18 @@ body {
     color: #ddd;
     font-size: 0.9rem;
     line-height: 1.4;
-    
     margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--speed), transform var(--speed);
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .project-card[active] .project-card__btn {
@@ -3765,15 +3788,15 @@ body {
     
     .project-card:not([active]) .project-card__title {
         writing-mode: horizontal-tb;
-        transform: none;
+        transform: translateY(20px);
         text-align: center;
         position: static;
         width: 100%;
         display: flex;
-        
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        opacity: 1;
     }
     
     .project-card:not([active]) .project-card__title .text {
@@ -3866,6 +3889,8 @@ body {
         font-size: 1.8rem;
         margin-bottom: 1rem;
         margin-top: 2rem;
+        transform: translateY(0);
+        opacity: 1;
     }
     
     .project-card[active] .project-card__title .number {
@@ -3882,6 +3907,9 @@ body {
         font-size: 0.95rem;
         max-width: 100%;
         margin-bottom: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease-out 0.3s forwards;
     }
 
     .project-card[active] .project-card__btn {
