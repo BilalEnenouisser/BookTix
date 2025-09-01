@@ -59,11 +59,22 @@
     );
 
     cards.forEach((card, i) => {
-        card.addEventListener(
-            "mouseenter",
-            () => matchMedia("(hover:hover)").matches && activate(i, true)
-        );
+        // Enhanced hover detection for desktop
+        card.addEventListener("mouseenter", () => {
+            // Check if device supports hover (desktop) and not touch
+            if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                activate(i, true);
+            }
+        });
+        
+        // Click handler for mobile and desktop
         card.addEventListener("click", () => activate(i, true));
+        
+        // Touch handler for mobile devices
+        card.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            activate(i, true);
+        }, { passive: false });
     });
 
     let sx = 0,

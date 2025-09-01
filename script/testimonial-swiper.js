@@ -96,6 +96,9 @@
 
     let currentSlide = 0;
     const totalSlides = testimonials.length;
+    let progressInterval;
+    let percentTime = 0;
+    const progressDuration = 5000; // 5 seconds
 
     // DOM elements
     const testimonialCard = document.querySelector('.testimonial-card');
@@ -103,6 +106,7 @@
     const currentSlideElement = document.querySelector('.current-slide');
     const prevBtn = document.getElementById('testimonial-prev');
     const nextBtn = document.getElementById('testimonial-next');
+    const dots = document.querySelectorAll('.dot');
 
     // Update testimonial content
     function updateTestimonial(index) {
@@ -133,6 +137,15 @@
         prevBtn.disabled = index === 0;
         nextBtn.disabled = index === totalSlides - 1;
         
+        // Update dots and reset progress
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+            const progressFill = dot.querySelector('.progressFill');
+            if (progressFill) {
+                progressFill.style.width = '0%';
+            }
+        });
+        
         // Add fade animation
         testimonialCard.style.opacity = '0';
         setTimeout(() => {
@@ -140,11 +153,52 @@
         }, 150);
     }
 
+    // Progress bar functions (like the example code)
+    function startProgressAnimation() {
+        resetProgressBar();
+        percentTime = 0;
+        progressInterval = setInterval(updateProgress, 10);
+    }
+    
+    function updateProgress() {
+        percentTime += 100 / (progressDuration / 10);
+        const currentDot = dots[currentSlide];
+        const progressFill = currentDot ? currentDot.querySelector('.progressFill') : null;
+        
+        if (progressFill) {
+            progressFill.style.width = percentTime + '%';
+        }
+        
+        if (percentTime >= 100) {
+            // Auto-swipe to next slide
+            if (currentSlide < totalSlides - 1) {
+                nextSlide();
+            } else {
+                goToSlide(0); // Loop back to first slide
+            }
+        }
+    }
+    
+    function resetProgressBar() {
+        dots.forEach(dot => {
+            const progressFill = dot.querySelector('.progressFill');
+            if (progressFill) {
+                progressFill.style.width = '0%';
+            }
+        });
+        clearInterval(progressInterval);
+    }
+    
+    function stopProgressAnimation() {
+        clearInterval(progressInterval);
+    }
+
     // Navigation functions
     function goToSlide(index) {
         if (index < 0 || index >= totalSlides) return;
         currentSlide = index;
         updateTestimonial(currentSlide);
+        startProgressAnimation();
     }
 
     function nextSlide() {
@@ -158,6 +212,11 @@
     // Event listeners
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -165,28 +224,11 @@
         if (e.key === 'ArrowRight') nextSlide();
     });
 
-    // Auto-play functionality (optional)
-    let autoPlayInterval;
-    
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(() => {
-            if (currentSlide < totalSlides - 1) {
-                nextSlide();
-            } else {
-                goToSlide(0);
-            }
-        }, 5000);
-    }
-
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
-
-    // Pause auto-play on hover
-    testimonialCard.addEventListener('mouseenter', stopAutoPlay);
-    testimonialCard.addEventListener('mouseleave', startAutoPlay);
+    // Pause progress on hover
+    testimonialCard.addEventListener('mouseenter', stopProgressAnimation);
+    testimonialCard.addEventListener('mouseleave', startProgressAnimation);
 
     // Initialize
     updateTestimonial(0);
-    startAutoPlay();
+    startProgressAnimation();
 })();
