@@ -6,10 +6,15 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
+}
+
+/* Global font override */
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
 }
 
 /* Navigation Bar */
@@ -889,7 +894,7 @@ body {
     color: #0065CC;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
 }
 
 .section-title {
@@ -1252,6 +1257,32 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    .project-card__bg{
+        height: 290px !important;
+        top: 70px !important;
+    }
+    .project-card[active]{
+        max-height: 520px !important;
+    }
+    .project-card[active] .project-card__content{
+        justify-content: space-between !important;
+    }
+    .project-card[active] .project-card__title{
+        margin-top: 0 !important;
+    }
+    .slider{
+        padding: 0 !important;
+    }
+    .project-card{
+        border-radius: 0 !important;
+    }
+    .project-card[active]{
+        box-shadow: none !important;
+    }
+
+}
+
 /* Mobile Accordion */
 .who-we-serve-accordion {
     display: none;
@@ -1301,9 +1332,13 @@ body {
     justify-content: space-between;
     padding: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, padding 0.3s ease;
     position: relative;
     z-index: 2;
+}
+
+.accordion-item.active .accordion-header {
+    padding-bottom: 7rem;
 }
 
 .accordion-title {
@@ -1569,8 +1604,19 @@ body {
     }
     
     .section-title {
-        font-size: 2.5rem;
+        font-size: 31px
     }
+    .section-subtitle{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    
+    .header-content{
+        
+        padding: 0;
+    }
+    
+    
     
     .section-description {
         font-size: 1rem;
@@ -1814,7 +1860,7 @@ body {
     transition: all 0.3s ease;
     width: fit-content;
     align-self: flex-start;
-    margin-top: 20px;
+    
 }
 
 .features-btn:hover {
@@ -1851,12 +1897,13 @@ body {
 .feature-item:not(:last-child)::after {
     content: '';
     position: absolute;
-    left: 50px;
+    left: 44px;
     right: 0;
     height: 1px;
     background: #0D2346;
     opacity: 0.1;
-    top: 52px;
+    top: 72px;
+
 }
 
 /* Responsive Design for Features Section */
@@ -1919,7 +1966,7 @@ body {
 
 @media (max-width: 480px) {
     .booktix-features {
-        padding: 60px 0;
+        padding: 0;
     }
     
     .features-container {
@@ -1928,17 +1975,30 @@ body {
     }
     
     .features-title {
-        font-size: 28px;
+        font-size: 35px;
+        text-align: start;
+        font-weight: 700;
+    }
+    .features-subtitle{
+        text-align: start;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 7px;
     }
     
     .features-description {
         font-size: 14px;
+        text-align: start;
     }
     
     .features-list {
         gap: 16px;
     }
-    
+    .features-btn {
+        
+        width: 100%;
+        max-width: 100%;
+    }
     .feature-item {
         gap: 12px;
     }
@@ -1949,7 +2009,7 @@ body {
     }
     
     .feature-text {
-        font-size: 14px;
+        font-size: 18px;
     }
     
     .features-illustration {
@@ -2691,7 +2751,7 @@ body {
 .illustration-placeholder {
     width: 407px;
     height: 538px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #E8EEFB;
     border-radius: 20px;
     backdrop-filter: blur(60px);
     display: flex;
@@ -2701,7 +2761,7 @@ body {
 }
 
 .illustration-placeholder span {
-    color: rgba(255, 255, 255, 0.6);
+    color: #BAD2F2;
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
@@ -2709,6 +2769,26 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+.illustration-placeholder1 {
+    
+    height: 102%;
+    background: #E8EEFB;
+    border-radius: 20px;
+    backdrop-filter: blur(60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.illustration-placeholder1 span {
+    color: #BAD2F2;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 /* Contact Form */
 .contact-form-container {
     display: flex;
@@ -2810,6 +2890,10 @@ body {
         width: 300px;
         height: 400px;
     }
+    .illustration-placeholder1 {
+        width: 300px;
+        height: 400px;
+    }
     
     .marketing-heading {
         font-size: 36px;
@@ -2839,6 +2923,12 @@ body {
         width: 280px;
         height: 350px;
     }
+    .illustration-placeholder1 {
+        width: 390px;
+        height: 77%;
+
+    }
+    
     
     .contact-form-container {
         justify-content: center;
@@ -3266,7 +3356,7 @@ body {
         padding-bottom: 0;
     }
     .project-card {
-        height: 20rem;
+        height: auto;
     }
     .project-card__title {
         font-size: 1.1rem;
@@ -3336,11 +3426,12 @@ body {
     }
 
     .project-card[active] {
-        min-height: 300px;
-        transform: none;
+        
+        transform: none !important;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
-
+    
+    
     .project-card__content {
         flex-direction: row;
         justify-content: flex-start;
