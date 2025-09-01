@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Swiper Carousel
     const swiper = new Swiper('.who-we-serve-swiper .swiper', {
         grabCursor: true,
-        initialSlide: 2, // Start with Community Theatre (center card)
+        initialSlide: 2, // Start with School Theatre (center card)
         centeredSlides: true,
         slidesPerView: 'auto',
         spaceBetween: 40,
