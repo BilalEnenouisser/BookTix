@@ -32,14 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             on: {
                 init: function() {
-                    console.log('Brands Swiper initialized with continuous autoplay');
                     // Force start autoplay
                     if (this.autoplay) {
                         this.autoplay.start();
                     }
                 },
                 slideChange: function() {
-                    console.log('Brand slide changed to:', this.realIndex);
                 }
             }
         });
