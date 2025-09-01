@@ -43,26 +43,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Dropdown functionality for mobile
+    // Dropdown functionality for desktop and mobile
     dropdowns.forEach(dropdown => {
         const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
         
         if (dropdownToggle) {
             dropdownToggle.addEventListener('click', (e) => {
-                // Only handle click events on mobile
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    
-                    // Close other dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current dropdown
-                    dropdown.classList.toggle('active');
-                }
+                e.preventDefault();
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
             });
         }
     });
@@ -101,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Responsive behavior
     window.addEventListener('resize', () => {
         // Close mobile menu on resize if screen becomes larger
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1024) {
             if (mobileSidebar) mobileSidebar.classList.remove('active');
             document.body.style.overflow = '';
             
@@ -135,13 +132,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add hover effects for better UX
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('mouseenter', () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 link.style.transform = 'translateY(-1px)';
             }
         });
         
         link.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 link.style.transform = 'translateY(0)';
             }
         });
