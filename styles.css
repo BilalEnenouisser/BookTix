@@ -50,7 +50,7 @@ body {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    
     align-items: center;
 }
 
@@ -63,6 +63,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    padding: 7px 17px 7px 17px;
 }
 
 .nav-link:hover {
@@ -85,42 +86,198 @@ body {
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 158%;
+    left: -180px;
     background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    min-width: 200px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 24px 32px rgba(167, 175, 186, 0.12), 0 4px 4px rgba(167, 175, 186, 0.12);
+    width: 677px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 1001;
-    margin-top: 0.5rem;
-    padding: 0.5rem 0;
+    
+    padding: 0;
     overflow: hidden;
 }
 
+.dropdown-menu22{
+    top: 140% !important;
+}
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-.dropdown-item {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    color: #333;
+/* Adjust dropdown positioning for the Why BookTix dropdown */
+.nav-item.dropdown:first-of-type .dropdown-menu {
+    left: -100px;
+}
+
+/* Adjust dropdown positioning for the Customers dropdown */
+.nav-item.dropdown:nth-child(3) .dropdown-menu {
+    left: -200px;
+}
+
+/* Adjust dropdown positioning for the Get Help dropdown in nav-actions */
+.nav-actions .nav-item.dropdown .dropdown-menu {
+    left: -130px;
+    width: 400px;
+}
+
+/* Hover effect for Get Help button when dropdown is hovered */
+.nav-actions .nav-item.dropdown:hover .btn-help {
+    background-color: #E9F3FF;
+    border-radius: 42px;
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+    color: #0065CC;
+    background-color: #E9F3FF;
+    border-radius: 42px;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 1200px) {
+    .dropdown-menu {
+        width: 500px;
+        height: auto;
+    }
+    
+    .nav-item.dropdown:first-of-type .dropdown-menu {
+        left: -75px;
+    }
+    
+    .nav-item.dropdown:nth-child(3) .dropdown-menu {
+        left: -150px;
+    }
+    
+    .nav-actions .nav-item.dropdown .dropdown-menu {
+        left: -200px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        width: 100%;
+        height: auto;
+        left: 0;
+    }
+    
+    .nav-item.dropdown:first-of-type .dropdown-menu {
+        left: 0;
+    }
+    
+    .nav-item.dropdown:nth-child(3) .dropdown-menu {
+        left: 0;
+    }
+    
+    .nav-actions .nav-item.dropdown .dropdown-menu {
+        left: 0;
+        width: 100%;
+    }
+}
+
+.dropdown-header {
+    padding: 44px 48px 0px 48px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #97A3B7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+   
+}
+
+.dropdown-content {
+    display: flex;
+    padding: 15px 48px 48px 41px;
+    gap: 60px;
+}
+
+.dropdown-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0;
+    text-decoration: none;
+    color: #0D2347;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
 }
 
 .dropdown-item:hover {
     background-color: #f8f9fa;
-    color: #0065CC;
     transform: translateX(4px);
+}
+
+.dropdown-item:hover .dropdown-icon-container {
+    background: linear-gradient(135deg, #3097FF 0%, #0065CC 27.21%, #5D00F3 100%);
+}
+
+.dropdown-item:hover .dropdown-icon-container img {
+    filter: brightness(0) invert(1);
+}
+
+.dropdown-icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E9F3FF;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.dropdown-icon-container img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.dropdown-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0D2347;
+    line-height: 24px;
+}
+
+.chevron-right {
+    color: #30A6FF;
+    margin-left: 4px;
+}
+
+.dropdown-description {
+    font-size: 14px;
+    color: #6E7B90;
+    line-height: 21px;
+    font-weight: 400;
 }
 
 /* Action Buttons */
@@ -158,6 +315,11 @@ body {
     height: 20px;
 }
 
+.btn-icon1 {
+    width: 15px;
+    height: 15px;
+}
+
 .btn-help {
     background: #fff;
     color: #333;
@@ -193,80 +355,183 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Help Popup */
-.help-popup {
+/* Mobile Sidebar Menu */
+.mobile-sidebar {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-}
-
-.help-popup.active {
-    display: flex;
-}
-
-.help-popup-content {
+    left: -100%;
+    width: 100%;
+    height: 100vh;
     background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
-    position: relative;
-    text-align: center;
-}
-
-.help-popup-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    transition: color 0.3s ease;
-    padding: 0.5rem;
-}
-
-.help-popup-close:hover {
-    color: #000;
-}
-
-.help-popup h3 {
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.help-popup p {
-    margin-bottom: 1.5rem;
-    color: #666;
-}
-
-.help-options {
+    z-index: 3000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    justify-content: flex-start;
 }
 
-.help-option {
-    padding: 0.75rem 1rem;
-    background: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
+.mobile-sidebar.active {
+    left: 0;
+}
+
+.mobile-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.mobile-logo img {
+    height: 32px;
+}
+
+.mobile-close-btn {
+    background: #E9F3FF;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-close-btn:hover {
+    background: #D1E7FF;
+}
+
+.mobile-nav {
+    flex: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid #E5E7EB;
+    width: 100%;
+}
+
+.mobile-nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mobile-nav-link:hover {
+    background-color: #F9FAFB;
+}
+
+.mobile-dropdown-icon {
+    transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #F9FAFB;
+    display: none;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+    display: block;
+}
+
+.mobile-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px 12px 48px;
+    color: #666;
+    font-size: 14px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.mobile-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-dropdown-icon-container {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-actions {
+    padding: 24px;
+    border-top: 1px solid #E5E7EB;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 42px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 100%;
+    font-size: 16px;
 }
 
-.help-option:hover {
-    background: #0065CC;
-    color: #fff;
-    border-color: #0065CC;
+.mobile-btn-help {
+    background: #fff;
+    color: #0065CC;
+    border: 1px solid #0065CC;
 }
+
+.mobile-btn-help:hover {
+    background: #E9F3FF;
+}
+
+.mobile-btn-connect {
+    background: linear-gradient(135deg, #0065CC 0%, #7C3AED 100%);
+    color: #fff;
+}
+
+.mobile-btn-connect:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 101, 204, 0.3);
+}
+
+.mobile-btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+
 
 /* Hero Section */
 .hero {
@@ -951,38 +1216,15 @@ body {
 
 @media (max-width: 768px) {
     .nav-menu {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        padding: 1rem 0;
+        display: none;
     }
     
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+    .nav-actions {
+        display: none;
     }
     
-    .nav-list {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .nav-item {
-        width: 100%;
-    }
-    
-    .nav-link {
-        padding: 1rem 2rem;
-        width: 100%;
-        justify-content: space-between;
+    .nav-toggle {
+        display: flex;
     }
     
     .dropdown-menu {
@@ -996,6 +1238,46 @@ body {
         border-radius: 0;
         margin-top: 0;
         display: none;
+        width: 100%;
+    }
+    
+    .dropdown-header {
+        padding: 12px 20px;
+        font-size: 12px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .dropdown-content {
+        padding: 16px 20px;
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+    .dropdown-column {
+        gap: 16px;
+    }
+    
+    .dropdown-item {
+        padding: 12px;
+        gap: 12px;
+    }
+    
+    .dropdown-icon-container {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .dropdown-icon-container img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .dropdown-title {
+        font-size: 14px;
+    }
+    
+    .dropdown-description {
+        font-size: 12px;
     }
     
     .dropdown.active .dropdown-menu {
@@ -1026,13 +1308,13 @@ body {
         transform: rotate(-45deg) translate(7px, -6px);
     }
     
-    /* Hide dropdown functionality for "Why BookTix" on mobile */
+    /* Enable dropdown functionality for "Why BookTix" on mobile */
     .nav-item.dropdown:first-of-type .dropdown-menu {
-        display: none !important;
+        display: block;
     }
     
     .nav-item.dropdown:first-of-type .dropdown-icon {
-        display: none;
+        display: block;
     }
     
     /* Show mobile action buttons and hide desktop ones */
