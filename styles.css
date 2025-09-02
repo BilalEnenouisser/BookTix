@@ -591,7 +591,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    margin-top: 80px; /* Account for fixed navbar */
+    margin-top: 79px; /* Remove gap between navbar and hero */
 }
 
 /* Mobile Hero Section */
@@ -601,7 +601,7 @@ body {
     width: 100%;
     height: 800px;
     overflow: hidden;
-    margin-top: 80px; /* Account for fixed navbar */
+    margin-top: 72px; /* Remove gap between navbar and hero */
     background: #0D2346;
     
 }
