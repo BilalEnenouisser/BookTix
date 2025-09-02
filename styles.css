@@ -94,7 +94,7 @@ body {
 .dropdown-menu {
     position: absolute;
     top: 164%;
-    left: -180px;
+    left: -251px;
     background: #fff;
     border: none;
     border-radius: 16px;
@@ -127,7 +127,7 @@ body {
 
 /* Adjust dropdown positioning for the Customers dropdown */
 .nav-item.dropdown:nth-child(3) .dropdown-menu {
-    left: -200px;
+    left: -251px;
 }
 
 /* Adjust dropdown positioning for the Get Help dropdown in nav-actions */
