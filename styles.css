@@ -51,12 +51,13 @@ body {
     display: flex;
     justify-content: center;
     margin-left: 2rem;
+    padding-left: 172px   !important;
 }
 
 .nav-list {
     display: flex;
     list-style: none;
-    
+    gap: 23px;
     align-items: center;
 }
 
@@ -64,11 +65,11 @@ body {
     text-decoration: none;
     color: #000000;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15.5px;
     transition: all 200ms;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 9px;
     padding: 7px 11px 7px 11px;
     
     border: 1px solid transparent;
@@ -296,11 +297,10 @@ body {
 .dropdown-title {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-size: 14px;
     font-weight: 600;
     color: #0D2347;
-    
     gap: 8px;
 }
 
@@ -323,8 +323,9 @@ body {
 /* Action Buttons */
 .nav-actions {
     display: flex;
-    gap: 1.25rem;
+    gap: 9px;
     align-items: center;
+    padding-right: 9px;
 }
 
 .nav-actions-mobile {
@@ -344,7 +345,7 @@ body {
     border: none;
     border-radius: 42px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -353,8 +354,8 @@ body {
 }
 
 .btn-icon {
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
 }
 
 .btn-icon1 {
@@ -368,6 +369,7 @@ body {
     border: 1px solid #0065CC;
     box-sizing: border-box;
     transition: all 200ms;
+    gap: 9px;
 }
 
 .btn-help:hover {
@@ -378,11 +380,12 @@ body {
 .btn-connect {
     background: linear-gradient(135deg, #0065CC 0%, #6B46C1 100%);
     color: #fff;
+    letter-spacing: 0.5px;
+    font-weight: 600 !important;
+    padding: 10px 24px !important;
 }
 
-.btn-connect:hover {
-    /* Removed upward movement animation */
-}
+
 
 /* Mobile Menu Toggle */
 .nav-toggle {
