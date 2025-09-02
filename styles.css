@@ -259,6 +259,10 @@ body {
     filter: brightness(0) invert(1);
 }
 
+.dropdown-item:hover .chevron-right {
+    opacity: 1;
+}
+
 .dropdown-icon-container {
     width: 48px;
     height: 48px;
@@ -292,11 +296,16 @@ body {
     font-weight: 600;
     color: #0D2347;
     line-height: 24px;
+    gap: 8px;
 }
 
 .chevron-right {
-    color: #30A6FF;
+    color: transparent;
     margin-left: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 20px;
+    height: 20px;
 }
 
 .dropdown-description {
@@ -4054,6 +4063,186 @@ body {
 /* Hide navigation buttons from benefits section */
 .benefits-section .nav-btn {
     display: none !important;
+}
+
+/* Mobile Help Popup Styles */
+.mobile-help-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.mobile-help-popup.active {
+    display: flex;
+}
+
+.mobile-help-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.mobile-help-popup-content {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 24px 32px rgba(167, 175, 186, 0.12), 0 4px 4px rgba(167, 175, 186, 0.12);
+}
+
+.mobile-help-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f8f9fa;
+}
+
+.mobile-help-popup-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0D2347;
+    margin: 0;
+}
+
+.mobile-help-popup-close {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-help-popup-close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mobile-help-popup-body {
+    padding: 24px;
+}
+
+.mobile-help-popup-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.mobile-help-popup-item:hover {
+    background-color: #f8f9fa;
+}
+
+.mobile-help-popup-icon-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E9F3FF;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-help-popup-item:hover .mobile-help-popup-icon-container {
+    background: linear-gradient(135deg, #3097FF 0%, #0065CC 27.21%, #5D00F3 100%);
+}
+
+.mobile-help-popup-item:hover .mobile-help-popup-icon-container img {
+    filter: brightness(0) invert(1);
+}
+
+.mobile-help-popup-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.mobile-help-popup-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0D2347;
+    line-height: 20px;
+}
+
+.mobile-help-popup-description {
+    font-size: 14px;
+    color: #6E7B90;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    .mobile-help-popup {
+        padding: 16px;
+    }
+    
+    .mobile-help-popup-content {
+        max-width: 100%;
+        margin: 0 16px;
+    }
+    
+    .mobile-help-popup-header {
+        padding: 16px 20px;
+    }
+    
+    .mobile-help-popup-body {
+        padding: 20px;
+    }
+    
+    .mobile-help-popup-item {
+        padding: 14px;
+    }
+    
+    .mobile-help-popup-icon-container {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .mobile-help-popup-icon-container img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Hero Section Bottom Line */
+#who::before {
+    content: "";
+    position: absolute;
+    top: -68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 136px;
+    background-color: rgb(97, 88, 219);
+}
+
+/* Hide line on mobile devices */
+@media (max-width: 768px) {
+    #who::before {
+        display: none;
+    }
 }
 
 

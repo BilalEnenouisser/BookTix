@@ -91,7 +91,52 @@ document.addEventListener('DOMContentLoaded', function() {
             // Close mobile menu when help button is clicked
             if (mobileSidebar) mobileSidebar.classList.remove('active');
             document.body.style.overflow = '';
-            // You can add additional functionality here if needed
+            // Show mobile help popup
+            const mobileHelpPopup = document.getElementById('mobileHelpPopup');
+            if (mobileHelpPopup) {
+                mobileHelpPopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    // Mobile Help Popup functionality
+    const mobileHelpPopup = document.getElementById('mobileHelpPopup');
+    const mobileHelpPopupClose = document.getElementById('mobileHelpPopupClose');
+    const mobileHelpPopupOverlay = document.getElementById('mobileHelpPopupOverlay');
+    const mobileGetHelpBtn = document.getElementById('mobileGetHelpBtn');
+
+    // Mobile Get Help button in mobile actions
+    if (mobileGetHelpBtn) {
+        mobileGetHelpBtn.addEventListener('click', () => {
+            if (mobileHelpPopup) {
+                mobileHelpPopup.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
+    if (mobileHelpPopup && mobileHelpPopupClose) {
+        mobileHelpPopupClose.addEventListener('click', () => {
+            mobileHelpPopup.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    if (mobileHelpPopup && mobileHelpPopupOverlay) {
+        mobileHelpPopupOverlay.addEventListener('click', () => {
+            mobileHelpPopup.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close mobile help popup when clicking outside
+    if (mobileHelpPopup) {
+        mobileHelpPopup.addEventListener('click', (e) => {
+            if (e.target === mobileHelpPopup) {
+                mobileHelpPopup.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 

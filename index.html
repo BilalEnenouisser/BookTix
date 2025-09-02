@@ -12,6 +12,17 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
+    <!-- SVG Gradient Filter for Arrows -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient-filter" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#0065CC"/>
+                <stop offset="50%" style="stop-color:#5D00F3"/>
+                <stop offset="100%" style="stop-color:#8B5CF6"/>
+            </linearGradient>
+        </defs>
+    </svg>
+    
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -46,8 +57,8 @@
                                         <div class="dropdown-text">
                                             <div class="dropdown-title">
                                                 <span>Easy Setup</span>
-                                                <svg class="chevron-right" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             <div class="dropdown-description">Get started in minutes</div>
@@ -58,7 +69,12 @@
                                             <img src="assets/nav/menu/Vector2.svg" alt="Secure Payments" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">Secure Payments</div>
+                                            <div class="dropdown-title">
+                                                <span>Secure Payments</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Safe and reliable transactions</div>
                                         </div>
                                     </div>
@@ -67,7 +83,12 @@
                                             <img src="assets/nav/menu/Vector3.svg" alt="Analytics" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">Analytics</div>
+                                            <div class="dropdown-title">
+                                                <span>Analytics</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Track your performance</div>
                                         </div>
                                     </div>
@@ -78,7 +99,12 @@
                                             <img src="assets/nav/menu/Vector4.svg" alt="24/7 Support" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">24/7 Support</div>
+                                            <div class="dropdown-title">
+                                                <span>24/7 Support</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Always here to help</div>
                                         </div>
                                     </div>
@@ -87,7 +113,12 @@
                                             <img src="assets/nav/menu/Vector5.svg" alt="Mobile Friendly" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">Mobile Friendly</div>
+                                            <div class="dropdown-title">
+                                                <span>Mobile Friendly</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Works on all devices</div>
                                         </div>
                                     </div>
@@ -113,8 +144,8 @@
                                         <div class="dropdown-text">
                                             <div class="dropdown-title">
                                                 <span>School Theatre</span>
-                                                <svg class="chevron-right" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                             </div>
                                             <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
@@ -125,7 +156,12 @@
                                             <img src="assets/nav/menu/Vector2.svg" alt="Dance Studio" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">Dance Studio</div>
+                                            <div class="dropdown-title">
+                                                <span>Dance Studio</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
                                         </div>
                                     </div>
@@ -134,7 +170,12 @@
                                             <img src="assets/nav/menu/Vector3.svg" alt="More" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">More</div>
+                                            <div class="dropdown-title">
+                                                <span>More</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
                                         </div>
                                     </div>
@@ -145,7 +186,12 @@
                                             <img src="assets/nav/menu/Vector4.svg" alt="School Athletics" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">School Athletics</div>
+                                            <div class="dropdown-title">
+                                                <span>School Athletics</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
                                         </div>
                                     </div>
@@ -154,7 +200,12 @@
                                             <img src="assets/nav/menu/Vector5.svg" alt="Community Theatre" width="24" height="24">
                                         </div>
                                         <div class="dropdown-text">
-                                            <div class="dropdown-title">Community Theatre</div>
+                                            <div class="dropdown-title">
+                                                <span>Community Theatre</span>
+                                                <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                    <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                             <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
                                         </div>
                                     </div>
@@ -204,7 +255,9 @@
                                     <div class="dropdown-text">
                                         <div class="dropdown-title">
                                             <span>Ticket Buyers Support</span>
-                                            
+                                            <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
                                         </div>
                                         <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
                                     </div>
@@ -214,7 +267,12 @@
                                         <img src="assets/nav/menu/knowledge.svg" alt="Knowledge Center" width="24" height="24">
                                     </div>
                                     <div class="dropdown-text">
-                                        <div class="dropdown-title">Knowledge Center</div>
+                                        <div class="dropdown-title">
+                                            <span>Knowledge Center</span>
+                                            <svg class="chevron-right" width="20" height="20" viewBox="0 0 16 16" fill="none">
+                                                <path d="M6 12L10 8L6 4" stroke="url(#gradient-filter)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
                                         <div class="dropdown-description">Lorem ipsum dolor sit amet</div>
                                     </div>
                                 </div>
@@ -343,7 +401,7 @@
         </nav>
         
         <div class="mobile-actions">
-            <button class="mobile-btn mobile-btn-help">
+            <button class="mobile-btn mobile-btn-help" id="mobileGetHelpBtn">
                 <img src="assets/nav/mic.svg" alt="Help Icon" class="mobile-btn-icon">
                 Get Help
             </button>
@@ -351,6 +409,41 @@
                 Let's Connect
                 <img src="assets/nav/arrow.svg" alt="Arrow" class="mobile-btn-icon">
             </button>
+        </div>
+    </div>
+
+    <!-- Mobile Get Help Popup -->
+    <div class="mobile-help-popup" id="mobileHelpPopup">
+        <div class="mobile-help-popup-overlay" id="mobileHelpPopupOverlay"></div>
+        <div class="mobile-help-popup-content">
+            <div class="mobile-help-popup-header">
+                <h3>GET HELP</h3>
+                <button class="mobile-help-popup-close" id="mobileHelpPopupClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-help-popup-body">
+                <div class="mobile-help-popup-item">
+                    <div class="mobile-help-popup-icon-container">
+                        <img src="assets/nav/menu/ticket-buyers.svg" alt="Ticket Buyers Support" width="24" height="24">
+                    </div>
+                    <div class="mobile-help-popup-text">
+                        <div class="mobile-help-popup-title">Ticket Buyers Support</div>
+                        <div class="mobile-help-popup-description">Lorem ipsum dolor sit amet</div>
+                    </div>
+                </div>
+                <div class="mobile-help-popup-item">
+                    <div class="mobile-help-popup-icon-container">
+                        <img src="assets/nav/menu/knowledge.svg" alt="Knowledge Center" width="24" height="24">
+                    </div>
+                    <div class="mobile-help-popup-text">
+                        <div class="mobile-help-popup-title">Knowledge Center</div>
+                        <div class="mobile-help-popup-description">Lorem ipsum dolor sit amet</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -432,7 +525,7 @@
     </section>
 
     <!-- Who We Serve Section -->
-    <section class="who-we-serve">
+    <section class="who-we-serve" id="who">
         <!-- Top Section with Title -->
         <div class="who-we-serve-header">
             <div class="header-content">
