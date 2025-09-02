@@ -88,9 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Get Help button functionality (for mobile menu)
     if (getHelpBtnMobile) {
         getHelpBtnMobile.addEventListener('click', () => {
-            // Close mobile menu when help button is clicked
-            if (mobileSidebar) mobileSidebar.classList.remove('active');
-            document.body.style.overflow = '';
+            // Don't close mobile menu, just show help popup
+            // if (mobileSidebar) mobileSidebar.classList.remove('active');
+            // document.body.style.overflow = '';
             // Show mobile help popup
             const mobileHelpPopup = document.getElementById('mobileHelpPopup');
             if (mobileHelpPopup) {
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileHelpPopupClose.addEventListener('click', () => {
             mobileHelpPopup.classList.remove('active');
             document.body.style.overflow = '';
+            // Don't close the navbar, just close the popup
         });
     }
 
@@ -127,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileHelpPopupOverlay.addEventListener('click', () => {
             mobileHelpPopup.classList.remove('active');
             document.body.style.overflow = '';
+            // Don't close the navbar, just close the popup
         });
     }
 
@@ -136,6 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === mobileHelpPopup) {
                 mobileHelpPopup.classList.remove('active');
                 document.body.style.overflow = '';
+                // Don't close the navbar, just close the popup
             }
         });
     }
@@ -174,31 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add hover effects for better UX
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            if (window.innerWidth > 1024) {
-                link.style.transform = 'translateY(-1px)';
-            }
-        });
-        
-        link.addEventListener('mouseleave', () => {
-            if (window.innerWidth > 1024) {
-                link.style.transform = 'translateY(0)';
-            }
-        });
-    });
-
-    // Button hover animations
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-            btn.style.transform = 'translateY(-2px)';
-        });
-        
-        btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'translateY(0)';
-        });
-    });
+    // Removed hover animations that caused upward movement
 
     // Initialize tooltips for better accessibility
     document.querySelectorAll('[title]').forEach(element => {
