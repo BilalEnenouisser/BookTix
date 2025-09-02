@@ -73,14 +73,6 @@
     );
 
     cards.forEach((card, i) => {
-        // Enhanced hover detection for desktop
-        card.addEventListener("mouseenter", () => {
-            // Check if device supports hover (desktop) and not touch
-            if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-                activate(i, true);
-            }
-        });
-        
         // Click handler for mobile and desktop
         card.addEventListener("click", () => activate(i, true));
         
